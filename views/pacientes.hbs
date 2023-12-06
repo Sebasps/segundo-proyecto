@@ -1,0 +1,39 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="registro-medicos.html">Registro médico</a></li>
+            <li><a href="registro-pacientes.html">Registro pacientes</a></li>
+            <li><a href="listado-medicos">Listado medicos</a></li>
+            <li><a href="listado-pacientes">Listado pacientes</a></li>
+            <li><a href="consultas-citas.html">Consultas citas médicas</a></li>
+            <li><a href="listado-citas">Listado citas</a></li>
+            <h1><a href="index.html">Centro Médico Back End</a></h1>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Listado de pacientes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Número de Cédula</th>
+                <th>Fecha de nacimiento</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{!-- Tabla dinamicas --}}
+            {{#each resultado}}
+            <tr>
+                <td>{{nombres}}</td>
+                <td>{{apellidos}}</td>
+                <td>{{cedula}}</td>
+                <td>{{formatoFecha fecha_nacimiento}}</td>
+                <td>{{telefono}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</main>

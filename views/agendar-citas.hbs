@@ -1,0 +1,30 @@
+<header>
+    <nav>
+        <ul>
+            <li><a href="registro-medicos.html">Registro médico</a></li>
+            <li><a href="registro-pacientes.html">Registro pacientes</a></li>
+            <li><a href="listado-medicos">Listado medicos</a></li>
+            <li><a href="listado-pacientes">Listado pacientes</a></li>
+            <li><a href="consultas-citas.html">Consultas citas médicas</a></li>
+            <li><a href="listado-citas">Listado citas</a></li>
+            <h1><a href="index.html">Centro Médico Back End</a></h1>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Agendamiento de citas</h2>
+    <form id="pacientes-form" method="post" action="/agregar-cita">
+        <label for="cedula">Número de Cédula</label>
+        <input type="number" id="cedula" name="cedula" required>
+        <label for="fecha_cita">Fecha de cita medica</label>
+        <input type="date" id="fecha_cita" name="fecha_cita" required>
+        <label for="medico">Medico Especialista</label> 
+        <select id="medico" name="medico" required>
+            <option value=""></option>
+            {{#each resultado}}
+                <option value="{{cedula}}">{{nombres}} {{apellidos}}</option>
+            {{/each}}
+        </select>
+        <input type="submit" value="Enviar">
+    </form>
+</main>
